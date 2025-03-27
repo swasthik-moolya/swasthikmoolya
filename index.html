@@ -6,118 +6,205 @@
     <title>System Access - [Swasthik Moolya's Portfolio]</title>
     <style>
         body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: monospace;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            overflow-y: auto;
-        }
-        
-        #terminal-window {
-            width: 90%;
-            max-width: 800px;
-            border: 2px solid #333;
-            background-color: #222;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-            overflow: hidden;
-        }
+    background-color: #000;
+    color: #00ff00;
+    font-family: monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+}
 
-        #terminal-header {
-            background-color: #444;
-            color: #ddd;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-        }
+#terminal-window {
+    width: 90%;
+    max-width: 800px;
+    border: 2px solid #333;
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-        #terminal-buttons {
-            display: flex;
-        }
+#terminal-header {
+    background-color: #444;
+    color: #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
 
-        .terminal-button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
+#terminal-buttons {
+    display: flex;
+}
 
-        .terminal-button.close { background-color: #ff605c; }
-        .terminal-button.minimize { background-color: #ffbd44; }
-        .terminal-button.maximize { background-color: #00ca56; }
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
 
-        #terminal {
-            padding: 15px;
-            overflow-y: auto;
-            height: 50vh;
-        }
+.terminal-button.close { background-color: #ff605c; }
+.terminal-button.minimize { background-color: #ffbd44; }
+.terminal-button.maximize { background-color: #00ca56; }
 
-        #terminal p {
-            margin: 5px 0;
-        }
+#terminal {
+    padding: 15px;
+    overflow-y: auto;
+    height: 50vh;
+}
 
-        #input-area {
-            width: 100%;
-            margin-top: 10px;
-            display: flex;
-        }
+#terminal p {
+    margin: 5px 0;
+}
 
-        #input-area input {
-            flex-grow: 1;
-            background-color: #000;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            padding: 5px;
-            font-family: monospace;
-        }
+#input-area {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
 
-        #input-area button {
-            background-color: #00ff00;
-            color: #000;
-            border: none;
-            padding: 5px 10px;
-            font-family: monospace;
-            cursor: pointer;
-        }
+#input-area input {
+    flex-grow: 1;
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px;
+    font-family: monospace;
+}
 
-        .hidden {
-            display: none;
-        }
+#input-area button {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-family: monospace;
+    cursor: pointer;
+}
 
-        a {
-            color: #00ffff;
-            text-decoration: none;
-        }
+.hidden {
+    display: none;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a {
+    color: #00ffff;
+    text-decoration: none;
+}
 
-        #back-button {
-            background-color: #00ff00;
-            color: #000;
-            border: none;
-            padding: 5px 10px;
-            font-family: monospace;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        #ascii-art {
-            white-space: pre; /* Preserve whitespace and line breaks */
-            font-family: monospace;
-            color: #00ff00;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+#back-button {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-family: monospace;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#ascii-art {
+    white-space: pre; /* Preserve whitespace and line breaks */
+    font-family: monospace;
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+
+/* For small devices (phones, up to 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #terminal-window {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #terminal-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #terminal-buttons {
+        margin-top: 5px;
+        justify-content: flex-start;
+    }
+
+    .terminal-button {
+        margin-right: 3px;
+    }
+
+    #terminal {
+        padding: 10px;
+        height: 40vh;
+    }
+
+    #input-area input {
+        padding: 3px;
+    }
+
+    #input-area button {
+        padding: 3px 8px;
+    }
+}
+
+/* For medium devices (tablets, 601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+
+    #terminal-window {
+        width: 95%;
+    }
+
+    #terminal {
+        height: 45vh;
+    }
+
+    #input-area input {
+        padding: 4px;
+    }
+
+    #input-area button {
+        padding: 4px 9px;
+    }
+}
+
+/* For large devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+    body {
+        padding: 20px;
+    }
+
+    #terminal-window {
+        width: 80%;
+    }
+
+    #terminal {
+        height: 50vh;
+    }
+
+    #input-area input {
+        padding: 5px;
+    }
+
+    #input-area button {
+        padding: 5px 10px;
+    }
+}
     </style>
 </head>
 <body>
